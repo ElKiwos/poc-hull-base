@@ -1,0 +1,452 @@
+################################ 
+### values.yaml for HULL     
+### The basic pre-configuration takes place here.
+###
+### Do not change this file, use additional values.hull.yaml 
+### to overwrite the selected fields!
+################################
+
+###################################################
+### CONFIG
+config:
+  general:  
+    rbac: true
+    fullnameOverride: ""
+    nameOverride: ""
+    noObjectNamePrefixes: false
+    createImagePullSecretsFromRegistries: true
+    globalImageRegistryServer: ""
+    globalImageRegistryToFirstRegistrySecretServer: false
+    debug:
+      renderBrokenHullGetTransformationReferences: false
+      renderNilWhenInlineIsNil: false
+      renderPathMissingWhenPathIsNonExistent: false
+    metadata:
+      labels:
+        common:
+          'app.kubernetes.io/managed-by':
+          'app.kubernetes.io/version':
+          'app.kubernetes.io/part-of':
+          'app.kubernetes.io/name': 
+          'app.kubernetes.io/instance':
+          'app.kubernetes.io/component':
+          'helm.sh/chart':
+          'vidispine.hull/version':
+        custom: {}
+      annotations: 
+        hashes: false
+        custom: {}
+    data: {} 
+  specific: {}
+###################################################
+        
+###################################################
+### OBJECTS
+objects:
+
+# NAMESPACE
+  namespace:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      staticName: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# CONFIGMAPS
+  configmap:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# SECRETS
+  secret:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# REGISTRIES
+  registry:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# SERVICEACCOUNTS
+  serviceaccount:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true 
+      annotations: {}
+      labels: {}
+    default:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# ROLES
+  role:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+      rules:
+        _HULL_OBJECT_TYPE_DEFAULT_: {}
+    default:
+      enabled: true
+      rules: {}
+###################################################
+
+# ROLEBINDINGS
+  rolebinding:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+    default:
+      enabled: true
+      roleRef:
+        apiGroup: "rbac.authorization.k8s.io"
+        kind: "Role"
+        name:  _HULL_TRANSFORMATION_<<<NAME=hull.util.transformation.makefullname>>><<<COMPONENT=default>>>
+      subjects: 
+      - kind: ServiceAccount
+        name: _HULL_TRANSFORMATION_<<<NAME=hull.util.transformation.makefullname>>><<<COMPONENT=default>>>
+###################################################
+
+# CLUSTERROLES
+  clusterrole:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+      rules:
+        _HULL_OBJECT_TYPE_DEFAULT_: {}
+###################################################
+
+# CLUSTERROLEBINDINGS
+  clusterrolebinding:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}   
+###################################################
+
+# CUSTOMRESOURCEDEFINITIONS (deprecated with Helm3)
+#  customresourcedefinitions:
+#    _HULL_OBJECT_TYPE_DEFAULT_:
+#      enabled: true
+#      annotations: {}
+#      labels: {}
+###################################################
+
+# CUSTOMRESOURCES 
+  customresource:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# PERSISTENTVOLUMECLAIMS 
+  persistentvolumeclaim:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# PERSISTENTVOLUMES 
+  persistentvolume:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}   
+###################################################
+
+# STORAGECLASSES 
+  storageclass:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# SERVICES 
+  service:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+      ports:
+        _HULL_OBJECT_TYPE_DEFAULT_: {}
+
+###################################################
+
+# INGRESSES 
+  ingress:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+      tls:
+        _HULL_OBJECT_TYPE_DEFAULT_: {}
+      rules:
+        _HULL_OBJECT_TYPE_DEFAULT_:
+          http:
+            paths:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+
+###################################################
+
+# INGRESSCLASSES 
+  ingressclass:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+
+###################################################
+
+# DEPLOYMENTS 
+  deployment:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+      templateAnnotations: {}
+      templateLabels: {}
+      pod:        
+        initContainers: 
+          _HULL_OBJECT_TYPE_DEFAULT_:
+            env: 
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            envFrom:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            volumeMounts:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+        containers: 
+          _HULL_OBJECT_TYPE_DEFAULT_:
+            env: 
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            envFrom:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            volumeMounts:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+        volumes: 
+          _HULL_OBJECT_TYPE_DEFAULT_: {}
+###################################################
+
+# JOBS 
+  job:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+      templateAnnotations: {}
+      templateLabels: {}
+      pod:
+        initContainers: 
+          _HULL_OBJECT_TYPE_DEFAULT_:
+            env: 
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            envFrom:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            volumeMounts:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+        containers: 
+          _HULL_OBJECT_TYPE_DEFAULT_:
+            env: 
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            envFrom:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            volumeMounts:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+        volumes: 
+          _HULL_OBJECT_TYPE_DEFAULT_: {}
+###################################################
+
+# CRONJOBS 
+  cronjob:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+      templateAnnotations: {}
+      templateLabels: {}
+      job:
+        pod:
+          initContainers: 
+            _HULL_OBJECT_TYPE_DEFAULT_:
+              env: 
+                _HULL_OBJECT_TYPE_DEFAULT_: {}
+              envFrom:
+                _HULL_OBJECT_TYPE_DEFAULT_: {}
+              volumeMounts:
+                _HULL_OBJECT_TYPE_DEFAULT_: {}
+          containers: 
+            _HULL_OBJECT_TYPE_DEFAULT_:
+              env: 
+                _HULL_OBJECT_TYPE_DEFAULT_: {}
+              envFrom:
+                _HULL_OBJECT_TYPE_DEFAULT_: {}
+              volumeMounts:
+                _HULL_OBJECT_TYPE_DEFAULT_: {}
+          volumes: 
+            _HULL_OBJECT_TYPE_DEFAULT_: {}
+###################################################
+
+# DAEMONSETS 
+  daemonset:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+      templateAnnotations: {}
+      templateLabels: {}
+      pod:
+        initContainers: 
+          _HULL_OBJECT_TYPE_DEFAULT_:
+            env: 
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            envFrom:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            volumeMounts:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+        containers: 
+          _HULL_OBJECT_TYPE_DEFAULT_:
+            env: 
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            envFrom:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            volumeMounts:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+        volumes: 
+          _HULL_OBJECT_TYPE_DEFAULT_: {}
+###################################################
+
+# STATEFULSETS 
+  statefulset:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+      templateAnnotations: {}
+      templateLabels: {}
+      pod:
+        initContainers: 
+          _HULL_OBJECT_TYPE_DEFAULT_:
+            env: 
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            envFrom:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            volumeMounts:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+        containers: 
+          _HULL_OBJECT_TYPE_DEFAULT_:
+            env: 
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            envFrom:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+            volumeMounts:
+              _HULL_OBJECT_TYPE_DEFAULT_: {}
+        volumes: 
+          _HULL_OBJECT_TYPE_DEFAULT_: {}
+###################################################
+
+# SERVICEMONITORS 
+  servicemonitor:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# HORIZONTALPODAUTOSCALER
+  horizontalpodautoscaler:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# PODDISRUPTIONBUDGET
+  poddisruptionbudget:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# PRIORITYCLASS
+  priorityclass:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# ENDPOINTS
+  endpoints:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# ENDPOINTSLICE
+  endpointslice:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# LIMITRANGE
+  limitrange:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+###################################################
+
+# MUTATINGWEBHOOKCONFIGURATION
+  mutatingwebhookconfiguration:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+      webhooks:
+        _HULL_OBJECT_TYPE_DEFAULT_: {}
+###################################################
+
+# VALIDATINGWEBHOOKCONFIGURATION
+  validatingwebhookconfiguration:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+      webhooks:
+        _HULL_OBJECT_TYPE_DEFAULT_: {}
+###################################################
+
+# RESOURCEQUOTA
+  resourcequota:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+##################################################
+
+# NETWORKPOLICY
+  networkpolicy:
+    _HULL_OBJECT_TYPE_DEFAULT_:
+      enabled: true
+      annotations: {}
+      labels: {}
+##################################################
